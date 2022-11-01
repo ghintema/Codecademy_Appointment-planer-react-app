@@ -7,11 +7,8 @@ const labelStyle = {fontSize: 12,
 
 export const AppointmentForm = (props) => {
 
-  const showForm = (e) => {
-    e.target.nextElementSibling.classList.toggle('visible')
-    e.target.classList.toggle('turnAround')
-  }
-  
+
+
   const handleChange = (e) => {
     if (e.target.id === 'title') {
       props.setTitle(e.target.value)
@@ -36,8 +33,7 @@ export const AppointmentForm = (props) => {
 
   return (
     <div>
-      <button id='hideAppointmentForm' className='arrow' onClick={showForm}>^</button>
-      <form onSubmit={props.handleSubmit} className="formStyle">
+      <form id='AppointmentForm' onSubmit={props.handleSubmit} className="formStyle">
         <label for="title" style={labelStyle}>Type title here:</label>
         <input id='title' type='text' value={props.title} onChange={handleChange} />
         <label for='contact' style={labelStyle}>Type contact or choose from list:</label>

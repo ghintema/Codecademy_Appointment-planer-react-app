@@ -30,8 +30,8 @@ export const ContactForm = (props) => {
 
   return (
     <div>
-      <button id='hideContactForm' className='arrow' onClick={showForm}></button>
-      <form onSubmit={props.handleSubmit} className="formStyle" >
+      
+      <form id="contactForm" onSubmit={props.handleSubmit} className="formStyle" >
         <label for="name" style={labelStyle}>Type name here:</label>
         <input
           id="name"

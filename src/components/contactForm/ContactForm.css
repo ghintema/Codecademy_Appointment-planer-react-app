@@ -11,17 +11,17 @@
 }
 
 .arrow {
-    position:relative;
-    top:-38px;
-    left:110px;
+    font-size:20px;
+    font-weight: bold;
     background-color:transparent;
     border:none;
-    transform: rotate(0deg);
+    transform: rotate(180deg);
     transition: transform 0.15s ease-out;
 }
 
-.arrow:focus {
+.arrow:focus, arrow:hover {
     border:none;
+    cursor: pointer;
 }
 
 label:hover {
@@ -29,6 +29,6 @@ label:hover {
 }
 
 .turnAround {
-    transform: rotate(180deg);
+    transform: rotate(-0deg);
     transition: transform 0.3s ease-out;
 }

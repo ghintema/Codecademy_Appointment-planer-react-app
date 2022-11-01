@@ -19,6 +19,12 @@ export const ContactsPage = (props) => {
   const layout = { display: 'flex',
                   alignItems: 'center'}
 
+
+  const showForm = (e) => {
+    document.getElementById('contactForm').classList.toggle('visible')
+    document.getElementById('hideContactForm').classList.toggle('turnAround')
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault(); /* To prevent browser default behaviour after submitting a form */
     console.log('handleSubmit invoked')
@@ -57,6 +63,7 @@ export const ContactsPage = (props) => {
           <label for="hideContactForm">
             <h2>Add Contact</h2>
           </label>
+          <button id='hideContactForm' className='arrow' onClick={showForm}>^</button>
           <SearchBar
             filter={filter}
             setFilter={setFilter} />

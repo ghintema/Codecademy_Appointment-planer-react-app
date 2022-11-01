@@ -13,7 +13,8 @@ export const TileList = (props) => {
       {props.content.filter((content) => content[props.filterCategory].toLowerCase().includes(props.filterTerm.toLowerCase())).map((content) => 
         <>
           <span 
-            id={content.id} 
+            id={content.id}
+            className='deleteCross' 
             onClick={props.delete}
             style={{position:'absolute', left:'20px', left:'20px', fontWeight:'bold'}}>x
           </span>

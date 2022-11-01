@@ -18,6 +18,12 @@ export const AppointmentsPage = (props) => {
   const [time, setTime] = useState('');
   const [filter, setFilter] = useState('');
 
+
+  const showForm = (e) => {
+    document.getElementById('AppointmentForm').classList.toggle('visible')
+    document.getElementById('hideAppointmentForm').classList.toggle('turnAround')
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -37,7 +43,7 @@ export const AppointmentsPage = (props) => {
           <label for="hideAppointmentForm">
             <h2>Add Appointment</h2>
           </label>
-          <button>dasf</button>
+          <button id='hideAppointmentForm' className='arrow' onClick={showForm}>^</button>
           <SearchBar
             filter={filter}
             setFilter={setFilter} />

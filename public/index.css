@@ -95,6 +95,53 @@ select {
   margin: 0 10px;
 }
 
+
 label[for='searchField'] {
   margin-left:15px;
+}
+
+
+.formStyle {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+}
+
+/* hide and show the form */
+.visible {
+  max-height: 350px;
+  transition: max-height 0.2s ease-out;
+}
+
+/* button to show the forms */
+.arrow {
+  position: relative;
+  top:-3px;
+  font-size:20px;
+  font-weight: bold;
+  background-color:transparent;
+  border:none;
+  transform: rotate(180deg);
+  transition: transform 0.15s ease-out;
+}
+
+.arrow:focus, arrow:hover {
+  border:none;
+  cursor: pointer;
+}
+
+/* the headlines besides the arrow are marked as label */
+label:hover {
+  cursor: pointer;
+}
+
+/* this class is toggled into the arrow-button to turn around */
+.turnAround {
+  top:3px;
+  transform: rotate(-0deg);
+  transition: 0.3s ease-out;
+}
+
+.deleteCross:hover {
+  cursor: pointer;
 }
