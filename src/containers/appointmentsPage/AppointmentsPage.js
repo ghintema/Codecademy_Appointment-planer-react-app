@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { AppointmentForm } from '../../components/appointmentForm/AppointmentForm'
 import { TileList } from '../../components/tileList/TileList';
-
+import { SearchBar } from '../../components/searchBar/SearchBar'
 
 
 
@@ -16,6 +16,7 @@ export const AppointmentsPage = (props) => {
   const [contact, setContact] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
+  const [filter, setFilter] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,12 +28,21 @@ export const AppointmentsPage = (props) => {
     setTime('');
   };
 
+  const layout = { display: 'flex',
+                   alignItems: 'center'}
   return (
     <div>
       <section>
-        <label for="hideAppointmentForm">
-          <h2>Add Appointment</h2>
-        </label>
+        <div style={ layout }>
+          <label for="hideAppointmentForm">
+            <h2>Add Appointment</h2>
+          </label>
+          <button>dasf</button>
+          <SearchBar
+            filter={filter}
+            setFilter={setFilter} />
+        </div>
+        
         <AppointmentForm
           title={title}
           contact={contact}
@@ -52,6 +62,8 @@ export const AppointmentsPage = (props) => {
         <h2>Appointments</h2>
         <TileList 
           content={props.appointments}
+          filterTerm={filter}
+          filterCategory='title'
           delete={props.deleteAppointment}/>
       </section>
     </div>

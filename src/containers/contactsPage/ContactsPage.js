@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
+import { SearchBar } from "../../components/searchBar/SearchBar";
 
 export const ContactsPage = (props) => {
   /*
@@ -13,8 +14,10 @@ export const ContactsPage = (props) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('01234');
   const [email, setEmail] = useState('');
+  const [filter, setFilter] = useState('');
 
-
+  const layout = { display: 'flex',
+                  alignItems: 'center'}
 
   const handleSubmit = (e) => {
     e.preventDefault(); /* To prevent browser default behaviour after submitting a form */
@@ -46,13 +49,18 @@ export const ContactsPage = (props) => {
 
   },[name])
 
-
+  console.log(filter)
   return (
     <div>
       <section>
-        <label for='hideContactForm'>
-          <h2>Add Contact</h2>
-        </label> 
+        <div style={ layout }>
+          <label for="hideContactForm">
+            <h2>Add Contact</h2>
+          </label>
+          <SearchBar
+            filter={filter}
+            setFilter={setFilter} />
+        </div>
         <ContactForm 
           name={name} 
           phone={phone} 
@@ -68,7 +76,10 @@ export const ContactsPage = (props) => {
         <h2>Contacts</h2>
         <TileList 
           content={props.contacts}
+          filterTerm={filter}
+          filterCategory='name'
           delete={props.deleteContact}/>
+          
       </section>
     </div>
   );

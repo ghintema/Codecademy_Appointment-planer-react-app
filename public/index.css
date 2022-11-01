@@ -22,12 +22,12 @@ nav {
   margin-bottom: 20px;
 }
 
-h2 {
+h2, label {
   font-weight: bold;
   font-size: 18px;
   color: #000000;
   margin: 0;
-  margin-bottom: 18px;
+  /* margin-bottom: 18px; */
 }
 
 section {
@@ -83,4 +83,18 @@ select {
 .tile-container {
   margin-bottom: 20px;
   /* border:1px solid red; */
+}
+
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+#searchField {
+  margin: 0 10px;
+}
+
+label[for='searchField'] {
+  margin-left:15px;
 }

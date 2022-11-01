@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
 
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
@@ -23,7 +23,6 @@ function App() {
                                         
   
 const addNewAppointment = (title, contact, date, time) => {
-  console.log('addNewAppointment ivoked with title: ${title}, contact: ${contact}, date: ${date}, time: ${time}');
   setAppointments([...appointments, {title: title, 
                                      contact: contact, 
                                      date: date, 
