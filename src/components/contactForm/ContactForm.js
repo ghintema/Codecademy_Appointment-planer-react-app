@@ -2,14 +2,10 @@ import React from "react";
 import './ContactForm.css';
 
 export const ContactForm = (props) => {
-  console.log('This is props.name out of contactForm:')
-  console.log(props.name);
+ 
 
 
-  const showForm = (e) => {
-    e.target.nextElementSibling.classList.toggle('visible')
-    e.target.classList.toggle('turnAround')
-  }
+
 
   const handleChange = (e) => {
     if (e.target.id === 'name') {
@@ -31,7 +27,7 @@ export const ContactForm = (props) => {
   return (
     <div>
       
-      <form id="contactForm" onSubmit={props.handleSubmit} className="formStyle" >
+      <form id="contactForm" onSubmit={props.handleSubmit} className="formStyle" aria-hidden={true} >
         <label for="name" style={labelStyle}>Type name here:</label>
         <input
           id="name"

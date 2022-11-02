@@ -20,7 +20,17 @@ export const AppointmentsPage = (props) => {
 
 
   const showForm = (e) => {
-    document.getElementById('AppointmentForm').classList.toggle('visible')
+    const appointmentForm = document.getElementById('AppointmentForm');
+    appointmentForm.classList.toggle('visible');
+   
+    // Setting aria-hidden for accessiblity reasons
+    if (appointmentForm.attributes['2'].value === 'false') {
+      appointmentForm.setAttribute('aria-hidden', 'true')
+    } else {
+      appointmentForm.setAttribute('aria-hidden', 'false')
+    }
+
+    
     document.getElementById('hideAppointmentForm').classList.toggle('turnAround')
   }
 
@@ -41,7 +51,7 @@ export const AppointmentsPage = (props) => {
       <section>
         <div style={ layout }>
           <label for="hideAppointmentForm">
-            <h2>Add Appointment</h2>
+            <h2 >Add Appointment</h2>
           </label>
           <button id='hideAppointmentForm' className='arrow' onClick={showForm}>^</button>
           <SearchBar

@@ -102,15 +102,18 @@ label[for='searchField'] {
 
 
 .formStyle {
+  visibility: hidden; /* to prevent focus when form is hidden */
   max-height: 0px;
   overflow: hidden;
-  transition: max-height 0.1s ease-out;
+  transition: 0.1s ease-out;
+  padding-top: 10px;
 }
 
 /* hide and show the form */
 .visible {
+  visibility: visible;
   max-height: 350px;
-  transition: max-height 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 /* button to show the forms */
@@ -121,6 +124,7 @@ label[for='searchField'] {
   font-weight: bold;
   background-color:transparent;
   border:none;
+  transform: scale(1.2, 0.8);
   transform: rotate(180deg);
   transition: transform 0.15s ease-out;
 }

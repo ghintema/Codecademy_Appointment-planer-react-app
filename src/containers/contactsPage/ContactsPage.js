@@ -21,13 +21,20 @@ export const ContactsPage = (props) => {
 
 
   const showForm = (e) => {
-    document.getElementById('contactForm').classList.toggle('visible')
+    const contactForm = document.getElementById('contactForm');
+    contactForm.classList.toggle('visible');
+   
+    // Setting aria-hidden for accessiblity reasons
+    if (contactForm.attributes['2'].value === 'false') {
+      contactForm.setAttribute('aria-hidden', 'true')
+    } else {
+      contactForm.setAttribute('aria-hidden', 'false')
+    }
     document.getElementById('hideContactForm').classList.toggle('turnAround')
   }
 
   const handleSubmit = (e) => {
     e.preventDefault(); /* To prevent browser default behaviour after submitting a form */
-    console.log('handleSubmit invoked')
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
@@ -55,7 +62,6 @@ export const ContactsPage = (props) => {
 
   },[name])
 
-  console.log(filter)
   return (
     <div>
       <section>

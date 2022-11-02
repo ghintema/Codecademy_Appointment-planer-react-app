@@ -33,7 +33,7 @@ export const AppointmentForm = (props) => {
 
   return (
     <div>
-      <form id='AppointmentForm' onSubmit={props.handleSubmit} className="formStyle">
+      <form id='AppointmentForm' onSubmit={props.handleSubmit} className="formStyle" aria-hidden={true}>
         <label for="title" style={labelStyle}>Type title here:</label>
         <input id='title' type='text' value={props.title} onChange={handleChange} />
         <label for='contact' style={labelStyle}>Type contact or choose from list:</label>

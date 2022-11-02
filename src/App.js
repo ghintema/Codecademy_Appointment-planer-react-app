@@ -40,7 +40,6 @@ const addNewContact = (name, phone, email) => {
 
 const deleteAppointment = (e) => {
   const id = e.target.id;
-  console.log('deleteAppointment invoked with id: ' + id)
   setAppointments(appointments.filter((appointment) => appointment.id != id))
 }
 

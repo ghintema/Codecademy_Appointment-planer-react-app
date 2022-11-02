@@ -3,8 +3,7 @@ import { Tile } from "../tile/Tile";
 
 export const TileList = (props) => {
 
-  console.log(props.filterTerm)
-  console.log(typeof props.filterTerm)
+
 
 
   return (
